@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="ear" name="wordsbank-ear:ear">
+    <output-path>$PROJECT_DIR$/wordsbank-ear/target</output-path>
+    <root id="archive" name="local-training-management-ear.ear">
+      <element id="artifact" artifact-name="wordsbank-ear:ear exploded" />
+    </root>
+  </artifact>
+</component>

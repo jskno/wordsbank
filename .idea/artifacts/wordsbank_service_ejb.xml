@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="ejb-jar" name="wordsbank-service:ejb">
+    <output-path>$PROJECT_DIR$/wordsbank-service/target</output-path>
+    <root id="archive" name="wordsbank-service-1.0-SNAPSHOT.jar">
+      <element id="artifact" artifact-name="wordsbank-service:ejb exploded" />
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>wordsbank-parent</artifactId>
+        <groupId>com.wordsbank</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>wordsbank-ear</artifactId>
+    <packaging>ear</packaging>
+
+    <build>
+        <finalName>local-training-management-ear</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-ear-plugin</artifactId>
+                <configuration>
+                    <displayName>${finalName}</displayName>
+                    <filtering>true</filtering>
+                    <!-- Colocamos las dependencias de terceros en la carpeta lib -->
+                    <defaultLibBundleDir>lib/</defaultLibBundleDir>
+                    <!-- Las dependencias propias van a primer nivel -->
+                    <modules>
+
+                        <ejbModule>
+                            <groupId>${parent.groupId}</groupId>
+                            <artifactId>wordsbank-persistence</artifactId>
+                            <bundleDir>/</bundleDir>
+                        </ejbModule>
+
+                        <ejbModule>
+                            <groupId>${parent.groupId}</groupId>
+                            <artifactId>wordsbank-service</artifactId>
+                            <bundleDir>/</bundleDir>
+                        </ejbModule>
+
+                        <webModule>
+                            <groupId>${pom.groupId}</groupId>
+                            <artifactId>wordsbank-web</artifactId>
+                            <contextRoot>/wordsbank</contextRoot>
+                        </webModule>
+
+                    </modules>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.tomcat.maven</groupId>
+                <artifactId>tomcat7-maven-plugin</artifactId>
+                <version>2.2</version>
+                <configuration>
+                    <path>/</path>
+                    <contextFile>src/main/webapp/WEB-INF/config/app-config.xml</contextFile>
+                    <mode>context</mode>
+                    <charset>UTF-8</charset>
+                    <warDirectory>target/${project.artifactId}-${project.version}</warDirectory>
+                </configuration>
+            </plugin>
+
+        </plugins>
+    </build>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>wordsbank-persistence</artifactId>
+            <version>${project.version}</version>
+            <type>ejb</type>
+            <scope>compile</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>wordsbank-service</artifactId>
+            <version>${project.version}</version>
+            <type>ejb</type>
+            <scope>compile</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>wordsbank-web</artifactId>
+            <version>${project.version}</version>
+            <type>war</type>
+            <scope>compile</scope>
+        </dependency>
+
+    </dependencies>
+
+</project>

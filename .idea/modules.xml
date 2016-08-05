@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/wordsbank-ear/wordsbank-ear.iml" filepath="$PROJECT_DIR$/wordsbank-ear/wordsbank-ear.iml" />
+      <module fileurl="file://$PROJECT_DIR$/wordsbank-parent.iml" filepath="$PROJECT_DIR$/wordsbank-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/wordsbank-persistence/wordsbank-persistence.iml" filepath="$PROJECT_DIR$/wordsbank-persistence/wordsbank-persistence.iml" />
+      <module fileurl="file://$PROJECT_DIR$/wordsbank-service/wordsbank-service.iml" filepath="$PROJECT_DIR$/wordsbank-service/wordsbank-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/wordsbank-web/wordsbank-web.iml" filepath="$PROJECT_DIR$/wordsbank-web/wordsbank-web.iml" />
+    </modules>
+  </component>
+</project>

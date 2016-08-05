@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="wordsbank-web:war">
+    <output-path>$PROJECT_DIR$/wordsbank-web/target</output-path>
+    <root id="archive" name="wordsbank-web.war">
+      <element id="artifact" artifact-name="wordsbank-web:war exploded" />
+    </root>
+  </artifact>
+</component>
